@@ -1,0 +1,87 @@
+@use 'sass:color';
+@use './variables' ;
+@use './mixins' as mixins;
+
+.form-container {
+  @include mixins.flex-center(center, column, wrap);
+  background-color: variables.$color-bg;
+  padding: 2rem 2.5rem;
+  border-radius: variables.$radius;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: variables.$shadow-light;
+}
+
+.form-title {
+  font-size: 2rem;
+  color: variables.$color-primary;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.employee-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  color: variables.$text-primary;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid variables.$color-primary;
+  border-radius: 0.5rem;
+  outline: none;
+
+  &:focus {
+    border-color: variables.$color-primary;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2); // valeur directe car rgba($color-primary...) ne fonctionne pas
+  }
+}
+
+.form-fieldset {
+  border: 1px solid variables.$color-secondary;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.fieldset-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: variables.$text-primary;
+}
+
+.submit-button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: variables.$color-primary;
+  color: variables.$color-bg;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background variables.$transition-default;
+
+  &:hover {
+    background-color: color.adjust(variables.$color-primary, $lightness: -8%);
+  }
+}

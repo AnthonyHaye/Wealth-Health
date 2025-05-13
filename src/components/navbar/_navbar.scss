@@ -1,0 +1,31 @@
+@use '../../styles/variables' as variable;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: variable.$color-white;
+  box-shadow: variable.$shadow-light;
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: variable.$color-primary;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: variable.$text-primary;
+      font-weight: 500;
+
+      &:hover {
+        color: variable.$color-primary;
+      }
+    }
+  }
+}

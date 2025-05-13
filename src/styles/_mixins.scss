@@ -1,0 +1,75 @@
+@use 'variables' as variable;
+
+// ---------------------------------------------------
+// Mixins SCSS
+// ---------------------------------------------------
+
+// Mixin: flex-center
+/// Utilisation : Applique un conteneur flex avec des options pour l'alignement, la direction et l'enveloppement.
+/// @param $justify {String} Alignement horizontal (par défaut : `flex-start`, exemples : `center`, `space-between`).
+/// @param $direction {String} Direction du flex (par défaut : `row`, exemples : `column`, `row-reverse`).
+/// @param $wrap {String} Enveloppement des éléments (par défaut : `nowrap`, exemples : `wrap`, `wrap-reverse`).
+/// @example
+/// ```scss
+/// .example {
+///   @include flex-center(center, column, wrap);
+/// }
+/// ```
+/// Résultat : Le conteneur flex centre les éléments, les dispose en colonne et autorise l'enveloppement.
+@mixin flex-center($justify: flex-start, $direction: row, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+  flex-wrap: $wrap;
+}
+
+// Mixin: typography
+/// Utilisation : Configure la typographie d'un élément avec des paramètres personnalisés.
+/// @param $font-size {Number} Taille de la police (par défaut : `1.3rem`, exemple : `16px`, `1rem`).
+/// @param $font-weight {Number} Poids de la police (par défaut : `400`, exemple : `700`).
+/// @param $color {Color} Couleur de la police (par défaut : `variable.$text-light`).
+/// @param $font-family {String} Famille de police (par défaut : `variable.$font-montserrat`).
+/// @example
+/// ```scss
+/// .example {
+///   @include typography(1.5rem, 700, red, Arial);
+/// }
+/// ```
+/// Résultat : L'élément a une police rouge, de taille 1.5rem, en gras (700), et utilise Arial.
+@mixin typography(
+  $font-size: 1.3rem,
+  $font-weight: 400,
+  $color: variable.$text-light,
+  $font-family: variable.$font-montserrat
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  font-family: $font-family;
+}
+
+// Mixin: background-and-border
+/// Utilisation : Définit des propriétés de fond et de bordure.
+/// @param $background-size {String} Taille du fond (par défaut : `cover`, exemples : `contain`, `auto`).
+/// @param $background-position {String} Position du fond (par défaut : `center`, exemples : `top left`, `bottom`).
+/// @param $background-repeat {String} Répétition du fond (par défaut : `no-repeat`, exemples : `repeat`, `repeat-x`).
+/// @param $border-radius {Number} Rayon de la bordure (par défaut : `10px`, exemples : `5px`, `50%`).
+/// @example
+/// ```scss
+/// .example {
+///   @include background-and-border(cover, center, no-repeat, 5px);
+/// }
+/// ```
+/// Résultat : L'élément a un fond ajusté (cover), centré, sans répétition, et avec des coins arrondis de 5px.
+@mixin background-and-border(
+  $background-size: cover,
+  $background-position: center,
+  $background-repeat: no-repeat,
+  $border-radius: 10px
+) {
+  background-size: $background-size;
+  background-position: $background-position;
+  background-repeat: $background-repeat;
+  border-radius: $border-radius;
+}

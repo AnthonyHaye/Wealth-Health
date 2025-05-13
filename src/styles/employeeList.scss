@@ -1,0 +1,77 @@
+@use 'variables' as variable;
+@use 'mixins' as mixin;
+@use 'sass:color'; // ✅ pour utiliser color.adjust()
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  @include mixin.flex-center(center, column, wrap);
+}
+
+.page-title {
+  @include mixin.typography(2rem, 700, variable.$text-primary, variable.$font-primary);
+  margin-bottom: 2rem;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  box-shadow: variable.$shadow-light;
+  border-radius: variable.$radius;
+  background-color: variable.$color-white;
+  transition: variable.$transition-default;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 800px;
+
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid color.adjust(variable.$text-secondary, $lightness: +30%);
+  }
+
+  th {
+    background-color: variable.$color-bg;
+    @include mixin.typography(0.85rem, 600, variable.$text-primary, variable.$font-primary);
+    text-transform: uppercase;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: color.adjust(variable.$color-bg, $lightness: +3%);
+  }
+
+  tbody tr {
+    transition: variable.$transition-default;
+
+    &:hover {
+      background-color: color.adjust(variable.$color-bg, $lightness: +8%);
+    }
+  }
+
+  td {
+    @include mixin.typography(0.9rem, 400, variable.$text-primary, variable.$font-primary);
+  }
+
+  td[colspan] {
+    text-align: center;
+    font-style: italic;
+    color: variable.$text-secondary;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: variable.$breakpoint-md) {
+  .employee-table {
+    font-size: 0.8rem;
+
+    th, td {
+      padding: 0.5rem;
+    }
+  }
+}

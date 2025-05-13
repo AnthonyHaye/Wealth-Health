@@ -1,0 +1,42 @@
+@use 'sass:color';
+@use './variables' ;
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: variables.$color-bg;
+  padding: 2rem;
+  border-radius: variables.$radius;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  color: variables.$color-success;
+  margin-bottom: 1rem;
+}
+
+.modal-close-button {
+  margin-top: 1rem;
+  background-color: variables.$color-primary;
+  color: variables.$color-white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background variables.$transition-default;
+
+  &:hover {
+    background-color: color.adjust(variables.$color-primary, variables.$lightness: -10%);
+  }
+}

@@ -1,0 +1,28 @@
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+$font-primary: 'Inter', sans-serif;
+
+// Colors
+$color-primary: #4F46E5; // Indigo moderne
+$color-secondary: #22C55E; // Vert de validation
+$color-bg: #F9FAFB; // Gris très clair
+$text-primary: #111827; // Noir doux
+$text-secondary: #6B7280; // Gris moyen
+$color-white: #ffffff;
+$color-black: #000000;
+$color-error: #f44336;
+$color-success: #4caf50;
+$color-info: #2196f3;
+$color-warning: #ff9800;
+
+// Breakpoints
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+// Border radius & shadow
+$radius: 1rem;
+$shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+// Transition
+$transition-default: all 0.3s ease-in-out;
