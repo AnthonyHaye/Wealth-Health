@@ -1,18 +1,28 @@
-// EmployeeList.jsx
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { WealthContext } from "../context/WealthContext";
-import "../styles/EmployeeList.scss";
+import { generateManyFakeEmployees } from "../utils/fakeEmployee";
+import "../styles/employeeList.scss";
 
 export default function EmployeeList() {
-  const { employees } = useContext(WealthContext);
+  const { employees, addEmployee, clearEmployees } = useContext(WealthContext);
 
-  useEffect(() => {
-    console.log("Liste actuelle des employés :", employees);
-  }, [employees]);
+  
+
+  const handleBulkGenerate = () => {
+    const fakeList = generateManyFakeEmployees(10000);
+    fakeList.forEach(emp => addEmployee(emp));
+  };
 
   return (
     <div className="container">
       <h1 className="page-title">HRnet – Employee List</h1>
+
+      <div style={{ marginBottom: "1rem" }}>
+        <button onClick={handleBulkGenerate}>Ajouter 100 employés</button>
+        <button onClick={clearEmployees}>Supprimer tous les employés</button>
+        <p>Total employés : {employees.length}</p>
+      </div>
+
       <div className="table-wrapper">
         <table className="employee-table">
           <thead>
