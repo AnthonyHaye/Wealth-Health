@@ -1,0 +1,15 @@
+.search-filter {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+
+  input, select, button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  input {
+    flex: 1;
+  }
+}

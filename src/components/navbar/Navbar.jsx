@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">WealthHealth</div>
       <ul className="navbar-links">
-        <li><Link to="/createEmploye">Créer un employé</Link></li>
+        <li><Link to="/">Créer un employé</Link></li>
         <li><Link to="/listEmployees">Liste des employés</Link></li>
       </ul>
     </nav>

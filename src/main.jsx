@@ -1,15 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './styles/main.scss'
 import AppRouter from './router/AppRouter.jsx'
-import './styles/main.scss'
 import { WealthContextProvider } from './context/WealthContext.jsx'
+import { SortProvider } from './context/SortContext.jsx'
+import './styles/main.scss'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    
     <WealthContextProvider>
-      <AppRouter />
+      <SortProvider>
+        <AppRouter />
+      </SortProvider>
     </WealthContextProvider>
   </React.StrictMode>,
 )

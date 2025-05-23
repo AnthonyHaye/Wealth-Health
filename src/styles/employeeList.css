@@ -69,6 +69,29 @@
   padding: 2rem;
 }
 
+.sortable-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.sortable-table th, .sortable-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+.sortable-table th {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: #f7f7f7;
+}
+.sortable-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.sortable-table tbody tr:hover {
+  background-color: #eee;
+}
+
 @media (max-width: 768px) {
   .employee-table {
     font-size: 0.8rem;

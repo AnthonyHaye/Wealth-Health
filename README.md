@@ -70,7 +70,7 @@ Le projet vise à convertir l'application interne HRNet de jQuery vers **React**
 
 ### Gestion des données
 
-Il n'y a pas d'API ni de backend pour le moment. La gestion des données est effectuée localement à l'aide de **Redux** pour stocker l'état global de l'application et de **localStorage** pour persister les données entre les sessions. Pour simuler des données réalistes d'employés, j'ai utilisé **Faker.js**, générant des informations aléatoires à des fins de développement et de test.
+Il n'y a pas d'API ni de backend pour le moment. La gestion des données est effectuée localement à l'aide de **Context** pour stocker l'état global de l'application et de **localStorage** pour persister les données entre les sessions. Pour simuler des données réalistes d'employés, j'ai utilisé **Faker.js**, générant des informations aléatoires à des fins de développement et de test.
 
 ## Utilisation
 
