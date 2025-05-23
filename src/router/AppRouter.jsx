@@ -19,7 +19,7 @@ const AppRouter = () => {
       {/* Définition des routes de l'application */}
       <Routes>
         {/* Route vers la page d'accueil */}
-        <Route path="/" element={<CreateEmployee />} />
+        <Route path="/Wealth-Health/" element={<CreateEmployee />} />
         <Route path="/listEmployees" element={<EmployeeList />} />
 
       </Routes>
