@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { US_STATES, DEPARTEMENTS } from "../../../constants/formData";
+
 
 
 export default function SelectInput({ id, label, value, onChange, options, searchable = false }) {

@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import "../styles/main.scss";
 import TextInput from "../components/input/textInput/TextInput";
 import DateInput from "../components/input/dateInput/DateInput";
-import SelectInput, { DEPARTEMENTS, US_STATES } from "../components/input/selectInput/SelectInput";
+import SelectInput from "../components/input/selectInput/SelectInput";
+import { US_STATES, DEPARTEMENTS } from "../constants/formData";
 import { WealthContext } from "../context/WealthContext";
 import Modal from "../components/modal/Modal";
 
