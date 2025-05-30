@@ -4,6 +4,7 @@ import TextInput from "../components/input/textInput/TextInput";
 import DateInput from "../components/input/dateInput/DateInput";
 import SelectInput, { DEPARTEMENTS, US_STATES } from "../components/input/selectInput/SelectInput";
 import { WealthContext } from "../context/WealthContext";
+import Modal from "../components/modal/Modal";
 
 export default function CreateEmployee() {
   const { addEmployee } = useContext(WealthContext);
@@ -37,7 +38,6 @@ export default function CreateEmployee() {
   };
 
   return (
-    <div>
       <div className="form-container">
         <h1 className="form-title">HRnet – Create Employee</h1>
 
@@ -73,17 +73,9 @@ export default function CreateEmployee() {
             Save Employee
           </button>
         </form>
-      </div>
 
       {showModal && (
-        <div className="modal-backdrop">
-          <div className="modal">
-            <h2 className="modal-title">Employee Created!</h2>
-            <button onClick={() => setShowModal(false)} className="modal-close-button">
-              Close
-            </button>
-          </div>
-        </div>
+        <Modal title="Employee Created!" onClose={() => setShowModal(false)} />
       )}
     </div>
   );

@@ -6,10 +6,7 @@
   @include mixins.flex-center(center, column, wrap);
   background-color: variables.$color-bg;
   padding: 2rem 2.5rem;
-  border-radius: variables.$radius;
-  max-width: 700px;
   width: 100%;
-  box-shadow: variables.$shadow-light;
 }
 
 .form-title {

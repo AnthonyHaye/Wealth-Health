@@ -13,7 +13,7 @@ export default function EmployeeList() {
   
 
   const handleBulkGenerate = () => {
-    const fakeList = generateManyFakeEmployees(10000);
+    const fakeList = generateManyFakeEmployees(100);
     fakeList.forEach(emp => addEmployee(emp));
   };
 
@@ -46,9 +46,13 @@ export default function EmployeeList() {
     <div className="container">
       <h1 className="page-title">HRnet – Employee List</h1>
 
-      <div style={{ marginBottom: "1rem" }}>
-        <button onClick={handleBulkGenerate}>Ajouter 100 employés</button>
-        <button onClick={clearEmployees}>Supprimer tous les employés</button>
+      <div >
+        {import.meta.env.MODE === "development" && (
+          <>
+            <button onClick={handleBulkGenerate}>Ajouter 100 employés</button>
+            <button onClick={clearEmployees}>Supprimer tous les employés</button>          
+          </>)}
+        
         <p>Total employés : {employees.length}</p>
         <SearchFilter columns={columns} onChange={({ text, column }) => {
           setSearchText(text);

@@ -1,13 +1,16 @@
 @use '../../styles/variables' as variable;
+@use '../../styles/mixins' as mixin;
 
 .app-layout {
-  display: flex;
-  flex-direction: column;
+  @include mixin.flex-center($direction: column);
   min-height: 100vh;
 }
 
 .main-content {
+  @include mixin.flex-center($justify: center);
+  width : 95%;
   flex: 1;
   padding: 2rem;
   background-color: variable.$color-bg;
+  border-radius: 1rem;
 }

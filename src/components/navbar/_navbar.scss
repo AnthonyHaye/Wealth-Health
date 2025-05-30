@@ -1,26 +1,22 @@
 @use '../../styles/variables' as variable;
+@use '../../styles/mixins' as mixin;
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include mixin.flex-center($direction: column);
   padding: 1rem 2rem;
-  background-color: variable.$color-white;
-  box-shadow: variable.$shadow-light;
 
   .navbar-logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: variable.$color-primary;
   }
 
   .navbar-links {
-    display: flex;
+    @include mixin.flex-center;
     gap: 1.5rem;
 
     a {
       text-decoration: none;
-      color: variable.$text-primary;
       font-weight: 500;
       font-size: 1.5rem;
 

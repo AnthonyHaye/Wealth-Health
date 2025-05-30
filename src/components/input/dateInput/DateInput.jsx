@@ -8,7 +8,7 @@ export default function DateInput({ id, label, value, onChange }) {
       <input
         id={id}
         name={id}
-        type="date"
+        type={"date"}
         value={value}
         onChange={onChange}
         required
