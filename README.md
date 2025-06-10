@@ -1,4 +1,4 @@
-# Dashboard de gestion (React & Redux)
+# Dashboard de gestion 
 
 <a name="readme-top"></a>
 
