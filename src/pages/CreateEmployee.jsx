@@ -76,7 +76,7 @@ export default function CreateEmployee() {
         </form>
 
       {showModal && (
-        <Modal title="Employee Created!" onClose={() => setShowModal(false)} />
+        <Modal title="Employee Created!" message="The employee has been successfully created." onClose={() => setShowModal(false)} />
       )}
     </div>
   );

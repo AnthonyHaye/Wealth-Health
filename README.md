@@ -35,7 +35,6 @@ Le projet vise à convertir l'application interne HRNet de jQuery vers **React**
 - **Conversion complète** de l'application **HRNet** en React.
 - **Remplacement** de **jQuery** par des composants React pour les principaux éléments de l'interface utilisateur.
 - **Analyse de performance** avant et après migration avec **Lighthouse**.
-- **Documentation** détaillée du nouveau composant React créé, incluant un guide d'utilisation et des commentaires de code.
 
 <img src="public/assets/home.png" alt="homepage" width="500">
 <img src="public/assets/table.png" alt="homepage" width="500">
@@ -73,7 +72,7 @@ Il n'y a pas d'API ni de backend pour le moment. La gestion des données est eff
 
 ## Utilisation
 
-- Accédez à l'application en ouvrant `http://localhost:3000` dans votre navigateur.
+- Accédez à l'application en ouvrant `http://localhost:5173/Wealth-Health/` dans votre navigateur.
 - Utilisez l'interface pour gérer les dossiers des employés (création et consultation).
 - Les composants clés tels que le sélecteur de date, la modale et le tableau ont été optimisés avec React.
 
