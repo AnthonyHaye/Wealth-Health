@@ -29,7 +29,7 @@
 **HRNet** est un projet de modernisation réalisé pour **WealthHealth**, une grande société financière.
 
 ### Mission :
-Le projet vise à convertir l'application interne HRNet de jQuery vers **React**. L'objectif principal est de refondre les pages clés de l'application, notamment les sélecteurs de date, les modales, les menus déroulants et les tableaux, en remplaçant les plugins jQuery par des composants React personnalisés. Cette migration est effectuée pour améliorer la performance de l'application et réduire les bugs récurrents.
+Le projet vise à convertir l'application interne HRNet de jQuery vers **React**. L'objectif principal est de refondre les pages clés de l'application, notamment les sélecteurs de date, les modales, les menus déroulants et les tableaux, en remplaçant les plugins jQuery par des composants React personnalisés. Cette migration a pour objectif d'améliorer les performances de l'application et de réduire les bugs récurrents..
 
 ### Tâches principales :
 - **Conversion complète** de l'application **HRNet** en React.
@@ -72,7 +72,7 @@ Il n'y a pas d'API ni de backend pour le moment. La gestion des données est eff
 
 ## Utilisation
 
-- Accédez à l'application en ouvrant `http://localhost:5173/Wealth-Health/` dans votre navigateur.
+- Accédez à l'application en ouvrant `http://localhost:5173/` dans votre navigateur.
 - Utilisez l'interface pour gérer les dossiers des employés (création et consultation).
 - Les composants clés tels que le sélecteur de date, la modale et le tableau ont été optimisés avec React.
 
