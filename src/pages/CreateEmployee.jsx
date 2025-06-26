@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
-import "../styles/main.scss";
+import { useContext, useState , Suspense, lazy } from "react";
 import TextInput from "../components/input/textInput/TextInput";
 import DateInput from "../components/input/dateInput/DateInput";
 import SelectInput from "../components/input/selectInput/SelectInput";
 import { US_STATES, DEPARTEMENTS } from "../constants/formData";
-import { WealthContext } from "../context/WealthContext";
-import Modal from "../components/modal/Modal";
+import { WealthContext } from "../context/WealthContext"; 
+
+const Modal = lazy(() => import("react-modal-component-anthonyhaye"));
 
 export default function CreateEmployee() {
   const { addEmployee } = useContext(WealthContext);
@@ -74,10 +74,18 @@ export default function CreateEmployee() {
             Save Employee
           </button>
         </form>
+      <Suspense fallback={null}>
+          {showModal && (
+              <Modal
+                title="Employee Created!"
+                message="The employee has been successfully created."
+                onClose={() => setShowModal(false)}
+              />
+            )}
+      </Suspense>
+      
+      
 
-      {showModal && (
-        <Modal title="Employee Created!" message="The employee has been successfully created." onClose={() => setShowModal(false)} />
-      )}
     </div>
   );
 }

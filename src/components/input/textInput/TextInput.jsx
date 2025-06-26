@@ -1,6 +1,4 @@
 import PropTypes from "prop-types";
-// import "../styles/main.scss";
-
 export default function TextInput({ id, label, value, onChange, type = "text" }) {
   return (
     <div className="form-group">

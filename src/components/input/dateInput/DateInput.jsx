@@ -1,6 +1,4 @@
 import PropTypes from "prop-types";
-// import "../styles/main.scss";
-
 export default function DateInput({ id, label, value, onChange }) {
   return (
     <div className="form-group">

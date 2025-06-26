@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="public/assets/hrnet.png" alt="Logo" width="200">
+    <img src="/assets/hrnet.png" alt="Logo" width="200">
   </a>
 </div>
 
@@ -36,8 +36,8 @@ Le projet vise à convertir l'application interne HRNet de jQuery vers **React**
 - **Remplacement** de **jQuery** par des composants React pour les principaux éléments de l'interface utilisateur.
 - **Analyse de performance** avant et après migration avec **Lighthouse**.
 
-<img src="public/assets/home.png" alt="homepage" width="500">
-<img src="public/assets/table.png" alt="homepage" width="500">
+<img src="/assets/home.png" alt="homepage" width="500">
+<img src="/assets/table.png" alt="homepage" width="500">
 
 ## Technologies utilisées
 
