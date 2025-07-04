@@ -1,4 +1,6 @@
-# Dashboard de gestion 
+# Dashboard de gestion
+
+<!-- ```jsx -->
 
 <a name="readme-top"></a>
 
@@ -22,16 +24,20 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
+<!-- ``` -->
 
 <!-- ABOUT THE PROJECT -->
+
 ## À propos du projet
 
 **HRNet** est un projet de modernisation réalisé pour **WealthHealth**, une grande société financière.
 
 ### Mission :
+
 Le projet vise à convertir l'application interne HRNet de jQuery vers **React**. L'objectif principal est de refondre les pages clés de l'application, notamment les sélecteurs de date, les modales, les menus déroulants et les tableaux, en remplaçant les plugins jQuery par des composants React personnalisés. Cette migration a pour objectif d'améliorer les performances de l'application et de réduire les bugs récurrents..
 
 ### Tâches principales :
+
 - **Conversion complète** de l'application **HRNet** en React.
 - **Remplacement** de **jQuery** par des composants React pour les principaux éléments de l'interface utilisateur.
 - **Analyse de performance** avant et après migration avec **Lighthouse**.
@@ -51,11 +57,13 @@ Le projet vise à convertir l'application interne HRNet de jQuery vers **React**
 ### Étapes pour configurer le projet :
 
 1. **Cloner le dépôt du projet** :
+
    ```bash
    git clone https://github.com/AnthonyHaye/Wealth-Health.git
    ```
 
 2. **Installer les dépendances** :
+
    ```bash
    npm install
    ```
@@ -64,7 +72,6 @@ Le projet vise à convertir l'application interne HRNet de jQuery vers **React**
    ```bash
    npm run dev
    ```
-
 
 ### Gestion des données
 
@@ -76,12 +83,9 @@ Il n'y a pas d'API ni de backend pour le moment. La gestion des données est eff
 - Utilisez l'interface pour gérer les dossiers des employés (création et consultation).
 - Les composants clés tels que le sélecteur de date, la modale et le tableau ont été optimisés avec React.
 
-
-
 ### Tests manuels :
+
 Des tests manuels ont été effectués pour vérifier le bon fonctionnement de l'interface utilisateur.
-
-
 
 ## Contact
 

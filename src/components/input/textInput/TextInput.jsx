@@ -1,5 +1,11 @@
 import PropTypes from "prop-types";
-export default function TextInput({ id, label, value, onChange, type = "text" }) {
+export default function TextInput({
+  id,
+  label,
+  value,
+  onChange,
+  type = "text",
+}) {
   return (
     <div className="form-group">
       <label htmlFor={id}>{label}</label>

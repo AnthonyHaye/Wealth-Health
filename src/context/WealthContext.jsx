@@ -1,5 +1,5 @@
 // src/context/WealthContext.js
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from "react";
 import { generateFakeEmployee } from "../utils/fakeEmployee";
 
 export const WealthContext = createContext();
@@ -25,10 +25,9 @@ export const WealthContextProvider = ({ children }) => {
   };
 
   const clearEmployees = () => {
-  setEmployees([]);
-  localStorage.removeItem("employees");
+    setEmployees([]);
+    localStorage.removeItem("employees");
   };
-
 
   return (
     <WealthContext.Provider value={{ employees, addEmployee, clearEmployees }}>

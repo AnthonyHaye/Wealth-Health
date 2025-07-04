@@ -1,5 +1,5 @@
-@use 'sass:color';
-@use './variables' ;
+@use "sass:color";
+@use "./variables";
 
 .modal-backdrop {
   position: fixed;
@@ -37,6 +37,9 @@
   transition: background variables.$transition-default;
 
   &:hover {
-    background-color: color.adjust(variables.$color-primary, variables.$lightness: -10%);
+    background-color: color.adjust(
+      variables.$color-primary,
+      $lightness: -10%
+    );
   }
 }

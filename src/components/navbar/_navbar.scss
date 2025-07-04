@@ -1,5 +1,5 @@
-@use '../../styles/variables' as variable;
-@use '../../styles/mixins' as mixin;
+@use "../../styles/variables" as variable;
+@use "../../styles/mixins" as mixin;
 
 .navbar {
   @include mixin.flex-center($direction: column);

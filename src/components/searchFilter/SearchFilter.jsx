@@ -35,7 +35,9 @@ export default function SearchFilter({ columns, onChange }) {
       <select value={column} onChange={handleColumnChange}>
         <option value="">Toutes les colonnes</option>
         {columns.map(({ label, key }) => (
-          <option key={key} value={key}>{label}</option>
+          <option key={key} value={key}>
+            {label}
+          </option>
         ))}
       </select>
       <button onClick={handleReset}>Réinitialiser</button>
@@ -48,7 +50,7 @@ SearchFilter.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       key: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   onChange: PropTypes.func.isRequired,
 };

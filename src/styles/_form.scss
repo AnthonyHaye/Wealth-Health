@@ -1,6 +1,6 @@
-@use 'sass:color';
-@use './variables' ;
-@use './mixins' as mixins;
+@use "sass:color";
+@use "./variables";
+@use "./mixins" as mixins;
 
 .form-container {
   @include mixins.flex-center(center, column, wrap);

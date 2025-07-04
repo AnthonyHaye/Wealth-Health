@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+.pagination-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-left: 1rem;
+}
+.pagination-wrapper span {
+  font-weight: normal;
+}
+.pagination-wrapper button {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+.pagination-wrapper button.active {
+  font-weight: bold;
+  background: black;
+  color: white;
+}
+.pagination-wrapper .jump-form {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.pagination-wrapper .jump-form input {
+  width: 4rem;
+  padding: 0.2rem;
+}
+.pagination-wrapper .jump-form button {
+  font-size: 0.8rem;
+}/*# sourceMappingURL=pagination.css.map */

@@ -1,15 +1,15 @@
-import { useContext, useState , Suspense, lazy } from "react";
+import { useContext, useState, Suspense, lazy } from "react";
 import TextInput from "../components/input/textInput/TextInput";
 import DateInput from "../components/input/dateInput/DateInput";
 import SelectInput from "../components/input/selectInput/SelectInput";
 import { US_STATES, DEPARTEMENTS } from "../constants/formData";
-import { WealthContext } from "../context/WealthContext"; 
+import { WealthContext } from "../context/WealthContext";
 
 const Modal = lazy(() => import("react-modal-component-anthonyhaye"));
 
 export default function CreateEmployee() {
   const { addEmployee } = useContext(WealthContext);
-  
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -34,58 +34,116 @@ export default function CreateEmployee() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addEmployee(formData);
-    console.log("Saved employee:", formData);
     setShowModal(true);
   };
 
   return (
-      <div className="form-container">
-        <h1 className="form-title">HRnet – Create Employee</h1>
+    <div className="form-container">
+      <h1 className="form-title">HRnet – Create Employee</h1>
 
-        <form onSubmit={handleSubmit} className="employee-form">
-          <div className="form-row">
-            <div className="form-group">              
-              <TextInput id="firstName" label="First Name" value={formData.firstName} onChange={handleChange} type="text"/>
-              <TextInput id="lastName" label="Last Name" value={formData.lastName} onChange={handleChange} type="text"/>
-            </div>            
+      <form onSubmit={handleSubmit} className="employee-form">
+        <div className="form-row">
+          <div className="form-group">
+            <TextInput
+              id="firstName"
+              label="First Name"
+              value={formData.firstName}
+              onChange={handleChange}
+              type="text"
+            />
+            <TextInput
+              id="lastName"
+              label="Last Name"
+              value={formData.lastName}
+              onChange={handleChange}
+              type="text"
+            />
           </div>
+        </div>
 
+        <div className="form-row">
+          <div className="form-group">
+            <DateInput
+              id="dateOfBirth"
+              label="Date of Birth"
+              value={formData.dateOfBirth}
+              onChange={handleChange}
+            />
+            <DateInput
+              id="startDate"
+              label="Start Date"
+              value={formData.startDate}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+
+        <fieldset className="form-fieldset">
+          <legend className="fieldset-title">Address</legend>
           <div className="form-row">
             <div className="form-group">
-              <DateInput id="dateOfBirth" label="Date of Birth" value={formData.dateOfBirth} onChange={handleChange} />
-              <DateInput id="startDate" label="Start Date" value={formData.startDate} onChange={handleChange} />  
+              <TextInput
+                id="street"
+                label="Street"
+                value={formData.street}
+                onChange={handleChange}
+                type="text"
+              />
+              <TextInput
+                id="city"
+                label="City"
+                value={formData.city}
+                onChange={handleChange}
+                type="text"
+              />
+              <SelectInput
+                id="state"
+                label="State"
+                value={formData.state}
+                onChange={handleChange}
+                options={US_STATES}
+                searchable={true}
+              />
+              <TextInput
+                id="zipCode"
+                label="Zip Code"
+                value={formData.zipCode}
+                onChange={handleChange}
+                type="number"
+              />
+              <SelectInput
+                id="department"
+                label="Department"
+                value={formData.department}
+                onChange={handleChange}
+                options={DEPARTEMENTS}
+              />
             </div>
           </div>
+        </fieldset>
 
-          <fieldset className="form-fieldset">
-            <legend className="fieldset-title">Address</legend>
-            <div className="form-row">
-              <div className="form-group">
-                <TextInput id="street" label="Street" value={formData.street} onChange={handleChange} type="text"/>
-                <TextInput id="city" label="City" value={formData.city} onChange={handleChange} type="text"/>
-                <SelectInput id="state" label="State" value={formData.state} onChange={handleChange} options={ US_STATES} searchable={true} />
-                <TextInput id="zipCode" label="Zip Code" value={formData.zipCode} onChange={handleChange} type="number" />
-                <SelectInput id="department" label="Department" value={formData.department} onChange={handleChange} options={DEPARTEMENTS} />
-             </div>   
-            </div>
-          </fieldset>
-
-          <button type="submit" className="submit-button">
-            Save Employee
-          </button>
-        </form>
+        <button type="submit" className="submit-button">
+          Save Employee
+        </button>
+      </form>
       <Suspense fallback={null}>
-          {showModal && (
-              <Modal
-                title="Employee Created!"
-                message="The employee has been successfully created."
-                onClose={() => setShowModal(false)}
-              />
-            )}
+        {showModal && (
+          <Modal
+            title="Employee Created!"
+            message="The employee has been successfully created."
+            children= { <div> <p>First Name: {formData.firstName}</p>
+            <p>Last Name: {formData.lastName}</p>
+            <p>Date of Birth: {formData.dateOfBirth}</p>
+            <p>Start Date: {formData.startDate}</p>
+            <p>Address:</p>
+            <p>{formData.street}</p>
+            <p>{formData.city}, {formData.state} {formData.zipCode}</p>
+            <p>Department: {formData.department}</p>
+            </div>}
+            onClose={() => setShowModal(false)}
+          />
+        )}
       </Suspense>
-      
-      
-
     </div>
   );
 }

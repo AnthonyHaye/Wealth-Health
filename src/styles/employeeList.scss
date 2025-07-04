@@ -1,6 +1,7 @@
-@use 'variables' as variable;
-@use 'mixins' as mixin;
-@use 'sass:color'; // ✅ pour utiliser color.adjust()
+@use "variables" as variable;
+@use "mixins" as mixin;
+@use "sass:color"; 
+
 
 .container {
   max-width: 1200px;
@@ -10,7 +11,12 @@
 }
 
 .page-title {
-  @include mixin.typography(2rem, 700, variable.$text-primary, variable.$font-primary);
+  @include mixin.typography(
+    2rem,
+    700,
+    variable.$text-primary,
+    variable.$font-primary
+  );
   margin-bottom: 2rem;
 }
 
@@ -30,15 +36,22 @@
   font-size: 0.9rem;
   min-width: 800px;
 
-  th, td {
+  th,
+  td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid color.adjust(variable.$text-secondary, $lightness: +30%);
+    border-bottom: 1px solid
+      color.adjust(variable.$text-secondary, $lightness: +30%);
   }
 
   th {
     background-color: variable.$color-bg;
-    @include mixin.typography(0.85rem, 600, variable.$text-primary, variable.$font-primary);
+    @include mixin.typography(
+      0.85rem,
+      600,
+      variable.$text-primary,
+      variable.$font-primary
+    );
     text-transform: uppercase;
   }
 
@@ -55,7 +68,12 @@
   }
 
   td {
-    @include mixin.typography(0.9rem, 400, variable.$text-primary, variable.$font-primary);
+    @include mixin.typography(
+      0.9rem,
+      400,
+      variable.$text-primary,
+      variable.$font-primary
+    );
   }
 
   td[colspan] {
@@ -74,7 +92,8 @@
   width: 100%;
   border-collapse: collapse;
 
-  th, td {
+  th,
+  td {
     padding: 1rem;
     border-bottom: 1px solid #ccc;
     text-align: left;
@@ -94,12 +113,16 @@
   }
 }
 
+.boxPagination {
+  @include mixin.flex-center(center, row, wrap);
+}
 
 @media (max-width: variable.$breakpoint-md) {
   .employee-table {
     font-size: 0.8rem;
 
-    th, td {
+    th,
+    td {
       padding: 0.5rem;
     }
   }

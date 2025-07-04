@@ -2,10 +2,10 @@
  * @file Définit les routes principales de l'application en utilisant React Router.
  */
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CreateEmployee from '../pages/CreateEmployee.jsx';
-import EmployeeList from '../pages/EmployeeList.jsx';
-import Layout from '../components/layout/Layout.jsx';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreateEmployee from "../pages/CreateEmployee.jsx";
+import EmployeeList from "../pages/EmployeeList.jsx";
+import Layout from "../components/layout/Layout.jsx";
 
 /**
  * Composant de routage principal de l'application.
@@ -16,13 +16,12 @@ const AppRouter = () => {
   return (
     <Router>
       <Layout>
-      {/* Définition des routes de l'application */}
-      <Routes>
-        {/* Route vers la page d'accueil */}
-        <Route path="/Wealth-Health/" element={<CreateEmployee />} />
-        <Route path="/listEmployees" element={<EmployeeList />} />
-
-      </Routes>
+        {/* Définition des routes de l'application */}
+        <Routes>
+          {/* Route vers la page d'accueil */}
+          <Route path="/Wealth-Health/" element={<CreateEmployee />} />
+          <Route path="/listEmployees" element={<EmployeeList />} />
+        </Routes>
       </Layout>
     </Router>
   );

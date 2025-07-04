@@ -1,0 +1,39 @@
+@use "../../styles/mixins" as mixin;
+
+.pagination-wrapper {
+  @include mixin.flex-center(center, row, wrap);
+  gap: 0.4rem;
+  margin-left: 1rem;
+
+  span {
+    font-weight: normal;
+  }
+
+  button {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+
+    &.active {
+      font-weight: bold;
+      background: black;
+      color: white;
+    }
+  }
+
+  .jump-form {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    input {
+      width: 4rem;
+      padding: 0.2rem;
+    }
+
+    button {
+      font-size: 0.8rem;
+    }
+  }
+}

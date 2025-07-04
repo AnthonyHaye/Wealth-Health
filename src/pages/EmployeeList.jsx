@@ -1,23 +1,24 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useMemo } from "react";
 import { WealthContext } from "../context/WealthContext";
 import { generateManyFakeEmployees } from "../utils/fakeEmployee";
+import {sortData} from "../utils/sortData";
 import SortableTable from "../components/sortableTable/SortableTable";
 import "../styles/employeeList.scss";
 import SearchFilter from "../components/searchFilter/SearchFilter";
+import Pagination from "../components/Pagination/pagination";
+import { useSort } from "../context/SortContext";
 
 export default function EmployeeList() {
   const { employees, addEmployee, clearEmployees } = useContext(WealthContext);
   const [searchText, setSearchText] = useState("");
   const [searchColumn, setSearchColumn] = useState("");
 
-  
-
   const handleBulkGenerate = () => {
     const fakeList = generateManyFakeEmployees(100);
     fakeList.forEach(emp => addEmployee(emp));
   };
 
-  const columns = [
+  const tablecolumns = [
     { label: "First Name", key: "firstName" },
     { label: "Last Name", key: "lastName" },
     { label: "Date of Birth", key: "dateOfBirth" },
@@ -38,9 +39,26 @@ export default function EmployeeList() {
     return value(searchColumn).includes(search);
   }
 
-  return columns.some(({ key }) => value(key).includes(search));
+  return tablecolumns.some(({ key }) => value(key).includes(search));
   });
+
+  const [page, setPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const { sortConfig } = useSort();
+  const handleChangeItemsPerPage = (event) => {
+    setItemsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
   
+  const sortedEmployees = useMemo(() => {
+  return sortData(filteredEmployees, sortConfig);
+}, [filteredEmployees, sortConfig]);
+
+const paginatedEmployees = useMemo(() => {
+  const start = page * itemsPerPage;
+  return sortedEmployees.slice(start, start + itemsPerPage);
+}, [sortedEmployees, page, itemsPerPage]);
+
 
   return (
     <div className="container">
@@ -54,20 +72,41 @@ export default function EmployeeList() {
           </>)}
         
         <p>Total employés : {employees.length}</p>
-        <SearchFilter columns={columns} onChange={({ text, column }) => {
+        <SearchFilter columns={tablecolumns} onChange={({ text, column }) => {
           setSearchText(text);
           setSearchColumn(column);
-          console.log("Filtrer:", text, "dans la colonne:", column);
         }} />
         <p>{filteredEmployees.length > 0
             ? `${filteredEmployees.length} employé(s) trouvé(s)`
             : "Aucun résultat"}
         </p>
 
+        <div className="boxPagination">
+          <div className="pagination-controls">
+            <label>
+              Afficher :{" "}
+              <select value={itemsPerPage} onChange={handleChangeItemsPerPage}>
+                {[10, 25, 50, 100].map((n) => (
+                  <option key={n} value={n}>{n}</option>
+                ))}
+              </select>{" "}
+              employés par page
+            </label>
+          </div>
+
+          <Pagination
+            totalItems={filteredEmployees.length}
+            itemsPerPage={itemsPerPage}
+            currentPage={page}
+            onPageChange={(newPage) => setPage(newPage)}
+          />
+        </div>
+
+
       </div>
 
       <div className="table-wrapper">
-        <SortableTable columns={columns} data={filteredEmployees} />      
+        <SortableTable columns={tablecolumns} data={paginatedEmployees} />      
                   
       </div>
     </div>

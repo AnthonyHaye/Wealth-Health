@@ -1,9 +1,8 @@
-
-@use './variables' ;
-@use './reset';
-@use './mixins';
-@use './form';
-@use './modal';
+@use "./variables";
+@use "./reset";
+@use "./mixins";
+@use "./form";
+@use "./modal";
 
 #root {
   min-height: 100vh;
@@ -11,10 +10,6 @@
 
 .page-wrapper {
   @include mixins.flex-center(center, column, wrap);
-  min-height: 100vh; // ex. un bleu très clair ou gris doux
+  min-height: 100vh;
   padding: 2rem;
 }
-
-
-
-
