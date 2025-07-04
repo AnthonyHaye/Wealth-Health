@@ -131,15 +131,6 @@ export default function CreateEmployee() {
           <Modal
             title="Employee Created!"
             message="The employee has been successfully created."
-            children= { <div> <p>First Name: {formData.firstName}</p>
-            <p>Last Name: {formData.lastName}</p>
-            <p>Date of Birth: {formData.dateOfBirth}</p>
-            <p>Start Date: {formData.startDate}</p>
-            <p>Address:</p>
-            <p>{formData.street}</p>
-            <p>{formData.city}, {formData.state} {formData.zipCode}</p>
-            <p>Department: {formData.department}</p>
-            </div>}
             onClose={() => setShowModal(false)}
           />
         )}
