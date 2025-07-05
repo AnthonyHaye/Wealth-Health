@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { useSort } from "../../context/SortContext";
+
 export default function SortableTable({ columns, data }) {
+  
   const { sortConfig, handleSort } = useSort();
 
   return (

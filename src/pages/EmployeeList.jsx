@@ -3,10 +3,10 @@ import { WealthContext } from "../context/WealthContext";
 import { generateManyFakeEmployees } from "../utils/fakeEmployee";
 import {sortData} from "../utils/sortData";
 import SortableTable from "../components/sortableTable/SortableTable";
-import "../styles/employeeList.scss";
 import SearchFilter from "../components/searchFilter/SearchFilter";
 import Pagination from "../components/Pagination/pagination";
 import { useSort } from "../context/SortContext";
+import "../styles/employeeList.scss";
 
 export default function EmployeeList() {
   const { employees, addEmployee, clearEmployees } = useContext(WealthContext);
