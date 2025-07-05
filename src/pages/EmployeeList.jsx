@@ -4,7 +4,7 @@ import { generateManyFakeEmployees } from "../utils/fakeEmployee";
 import {sortData} from "../utils/sortData";
 import SortableTable from "../components/sortableTable/SortableTable";
 import SearchFilter from "../components/searchFilter/SearchFilter";
-import Pagination from "../components/Pagination/pagination";
+import Pagination from "../components/pagination/Pagination";
 import { useSort } from "../context/SortContext";
 import "../styles/employeeList.scss";
 

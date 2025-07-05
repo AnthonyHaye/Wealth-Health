@@ -26,13 +26,35 @@ export default function Pagination({ totalItems, itemsPerPage, currentPage, onPa
 
   const handleJump = () => {
     const pageNum = parseInt(jumpInput, 10);
+
     if (!isNaN(pageNum) && pageNum >= 1 && pageNum <= totalPages) {
       onPageChange(pageNum - 1);
-      setShowJumpLeft(false);
-      setShowJumpRight(false);
+    }
+
+    setShowJumpLeft(false);
+    setShowJumpRight(false);
+    setJumpInput("");
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+
+    if (value === "") {
       setJumpInput("");
+      return;
+    }
+
+    const number = parseInt(value, 10);
+    if (!isNaN(number) && number >= 1 && number <= totalPages) {
+      setJumpInput(value);
     }
   };
+
+  const isJumpInputValid =
+    jumpInput !== "" &&
+    !isNaN(parseInt(jumpInput, 10)) &&
+    parseInt(jumpInput, 10) >= 1 &&
+    parseInt(jumpInput, 10) <= totalPages;
 
   return (
     <div className="pagination-wrapper">
@@ -50,12 +72,16 @@ export default function Pagination({ totalItems, itemsPerPage, currentPage, onPa
         <span className="jump-form">
           <input
             type="number"
+            min="1"
+            max={totalPages}
             placeholder="N°"
             value={jumpInput}
-            onChange={(e) => setJumpInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleJump()}
+            onChange={handleInputChange}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleJump();
+            }}
           />
-          <button onClick={handleJump}>OK</button>
+          <button onClick={handleJump} disabled={!isJumpInputValid}>OK</button>
         </span>
       )}
 
@@ -77,12 +103,16 @@ export default function Pagination({ totalItems, itemsPerPage, currentPage, onPa
         <span className="jump-form">
           <input
             type="number"
+            min="1"
+            max={totalPages}
             placeholder="N°"
             value={jumpInput}
-            onChange={(e) => setJumpInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleJump()}
+            onChange={handleInputChange}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleJump();
+            }}
           />
-          <button onClick={handleJump}>OK</button>
+          <button onClick={handleJump} disabled={!isJumpInputValid}>OK</button>
         </span>
       )}
 
